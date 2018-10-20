@@ -5,7 +5,8 @@ import {
   KEYBOARD_HEIGHT,
   VERTICAL_SEPARATOR,
   HORIZONTAL_SEPARATOR,
-  KEYBOARD_WIDTH
+  KEYBOARD_WIDTH,
+  defaultRenderKey
 } from "./defaults";
 
 import { KeysContainer } from "./KeysContainer";
@@ -41,7 +42,7 @@ export class ReactOnScreenKeyboard extends React.Component<KeyboardProps> {
       keyboardKeys = defaultKeyboardKeys,
       keyStyle = {},
       rowStyle = {},
-      renderKey = () => null
+      renderKey = defaultRenderKey
     } = this.props;
     const rowHeight = height * rowHeightPercent;
     const rowWidth = width * rowWidthPercent;

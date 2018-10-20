@@ -1,6 +1,8 @@
 ## React On Screen Keyboard
 
-A completely customisable 0 dependency react onscreen keyboard.
+A completely customisable react on screen keyboard.
+
+![React On Screen Keyboard Demo](/example.png)
 
 ## Install
 

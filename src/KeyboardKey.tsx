@@ -9,6 +9,43 @@ export type KeyboardKeyProps = {
 
 export class KeyboardKey extends React.Component<KeyboardKeyProps> {
   render() {
-    return defaultRenderKey(this.props);
+    const {
+      renderKey = defaultRenderKey,
+      overrides = new Map(),
+      val: { id, value, code },
+      verticalMargin = 0,
+      rowHeight
+    } = this.props;
+    if (overrides.has(id)) {
+      return overrides.get(id)(this.props);
+    } else if (Array.isArray(value)) {
+      return (
+        <div
+          key={JSON.stringify(id)}
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexDirection: "column",
+            height: rowHeight - 2 * verticalMargin
+          }}
+        >
+          {value.map((val, i) => (
+            <React.Fragment key={i}>
+              {renderKey({
+                ...this.props,
+                val: {
+                  ...this.props.val,
+                  id: id[i],
+                  code: code[i],
+                  value: value[i]
+                }
+              } as KeyboardKeyProps)}
+            </React.Fragment>
+          ))}
+        </div>
+      );
+    } else {
+      return renderKey(this.props);
+    }
   }
 }
