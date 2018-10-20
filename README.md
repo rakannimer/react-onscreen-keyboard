@@ -50,6 +50,39 @@ ReactDOM.render(
 - rowStyle?: React.CSSProperties;
 - keyStyle?: React.CSSProperties;
 
+```typescript
+type KeyboardProps = {
+  width?: number;
+  height?: number;
+  keyWidth?: number;
+  rowHeightPercent?: number;
+  rowWidthPercent?: number;
+  verticalMargin?: number;
+  horizontalMargin?: number;
+  overrides?: Map<
+    string,
+    (
+      props: {
+        val: KeyboardKeyVal;
+        rowHeight: number;
+      }
+    ) => any
+  >;
+  keyboardKeys?: KeyboardKeyVal[][];
+  renderKey?: (p: KeyboardKeyProps) => any;
+  rowStyle?: React.CSSProperties;
+  keyStyle?: React.CSSProperties;
+};
+
+type KeyboardKeyVal = {
+  value: KeyboardEvent["code"] | KeyboardEvent["code"][];
+  id: string | string[];
+  width: number;
+  // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
+  code: string | string[];
+};
+```
+
 [circleci-href]: https://circleci.com/gh/rakannimer/react-onscreen-keyboard
 [circleci-badge]: https://img.shields.io/circleci/project/github/rakannimer/react-onscreen-keyboard.svg
 [npm-href]: https://www.npmjs.com/package/react-onscreen-keyboard
