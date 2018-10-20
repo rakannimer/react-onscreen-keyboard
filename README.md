@@ -2,6 +2,10 @@
 
 A completely customisable react on screen keyboard.
 
+[![CircleCI][circleci-badge]][circleci-href]
+[![NPM][npm-version-badge]][npm-href]
+[![BundlePhobia][bundlephobia-badge]][bundlephobia-href]
+
 ![React On Screen Keyboard Demo](/example.png)
 
 ## Install
@@ -45,3 +49,10 @@ ReactDOM.render(
 - renderKey?: (p: KeyboardKeyProps) => JSX.Element;
 - rowStyle?: React.CSSProperties;
 - keyStyle?: React.CSSProperties;
+
+[circleci-href]: https://circleci.com/gh/rakannimer/react-onscreen-keyboard
+[circleci-badge]: https://img.shields.io/circleci/project/github/rakannimer/react-onscreen-keyboard.svg
+[npm-href]: https://www.npmjs.com/package/react-onscreen-keyboard
+[npm-version-badge]: https://badgen.net/npm/v/react-onscreen-keyboard
+[bundlephobia-badge]: https://img.shields.io/bundlephobia/minzip/react-onscreen-keyboard.svg
+[bundlephobia-href]: https://bundlephobia.com/result?p=react-onscreen-keyboard
